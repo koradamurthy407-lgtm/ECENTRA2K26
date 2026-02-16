@@ -1,169 +1,299 @@
-/* ===== GLOBAL STYLING ===== */
+/* ================================
+   ECENTRA 2K26 - ECE THEME UI
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   BODY + BACKGROUND
+================================ */
+
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  overflow-x: hidden;
-  background: #0f172a;
-  position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0f2027, #1b2a49, #16213e);
+    position: relative;
 }
 
-/* ===== ANIMATED TECH BACKGROUND ===== */
+/* Animated Circuit Grid Background */
 body::before {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(circle at 30% 30%, #1e3a8a 0%, transparent 40%),
-              radial-gradient(circle at 70% 70%, #0ea5e9 0%, transparent 40%);
-  animation: moveBackground 12s linear infinite;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background-image:
+        linear-gradient(rgba(0,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: moveGrid 20s linear infinite;
+    z-index: -2;
 }
 
-@keyframes moveBackground {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes moveGrid {
+    from { transform: translate(0,0); }
+    to { transform: translate(-60px,-60px); }
 }
 
-/* ===== NAVBAR ===== */
+/* ================================
+   NAVIGATION BAR
+================================ */
+
 nav {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 18px;
-  text-align: center;
-  backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(10, 20, 40, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,255,255,0.2);
 }
 
 nav a {
-  color: #ffffff;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+    color: #00f5ff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-  color: #38bdf8;
+    color: white;
+    text-shadow: 0 0 10px #00f5ff;
 }
 
-/* ===== HEADER ===== */
+/* ================================
+   HEADER / HERO SECTION
+================================ */
+
 header {
-  text-align: center;
-  padding: 120px 20px;
+    min-height: 100vh;
+    padding-top: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo {
-  width: 140px;
-  animation: float 4s ease-in-out infinite;
+header img.logo {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: pulseLogo 3s infinite ease-in-out;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+@keyframes pulseLogo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
 h1 {
-  font-size: 56px;
-  margin: 15px 0;
-  text-shadow: 0 0 15px rgba(56,189,248,0.6);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 64px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0,255,255,0.7);
 }
 
-.tagline {
-  font-size: 20px;
-  opacity: 0.9;
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0,255,255,0.6);
 }
 
-/* ===== GRID SECTION ===== */
-.page-section {
-  padding: 100px 20px;
-  text-align: center;
+p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 20px auto;
+    opacity: 0.9;
 }
 
-.page-title {
-  font-size: 42px;
-  margin-bottom: 60px;
-  text-shadow: 0 0 12px rgba(56,189,248,0.5);
-}
+/* ================================
+   BUTTONS
+================================ */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
-  width: 90%;
-  margin: auto;
-}
-
-/* ===== GLASS CARD STYLE ===== */
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(12px);
-  transition: 0.4s ease;
-  text-align: left;
-  border: 1px solid rgba(56,189,248,0.2);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(56,189,248,0.4);
-}
-
-.card h3 {
-  margin-bottom: 15px;
-}
-
-.card p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* ===== BUTTON STYLE ===== */
 .btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 22px;
-  background: linear-gradient(135deg, #0ea5e9, #2563eb);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: 0.3s ease;
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #00f5ff, #0077ff);
+    transition: 0.3s;
+    font-weight: 600;
 }
 
 .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00f5ff;
 }
 
-/* ===== COUNTDOWN ===== */
-#timer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 25px;
+/* ================================
+   SECTION LAYOUT
+================================ */
+
+section {
+    padding: 120px 20px 80px;
+    text-align: center;
 }
 
-#timer div {
-  background: rgba(255,255,255,0.08);
-  padding: 20px 25px;
-  border-radius: 15px;
-  min-width: 90px;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(56,189,248,0.3);
+/* ================================
+   GRID CARDS
+================================ */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin: auto;
 }
 
-#timer span {
-  font-size: 30px;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(56,189,248,0.7);
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0,255,255,0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* ===== MOBILE ===== */
+/* glowing top border animation */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+    animation: slideGlow 3s linear infinite;
+}
+
+@keyframes slideGlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00f5ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card a:hover {
+    color: white;
+    text-shadow: 0 0 10px #00f5ff;
+}
+
+/* ================================
+   COUNTDOWN TIMER
+================================ */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.time-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.3);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.time-box span {
+    font-size: 28px;
+    font-weight: 600;
+    display: block;
+}
+
+.time-box small {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* ================================
+   FLOATING ELECTRON NODES
+================================ */
+
+.nodes span {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #00f5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00f5ff;
+    animation: floatNodes 12s infinite linear;
+    z-index: -1;
+}
+
+.nodes span:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.nodes span:nth-child(2) { top: 60%; left: 30%; animation-delay: 2s; }
+.nodes span:nth-child(3) { top: 40%; left: 70%; animation-delay: 4s; }
+.nodes span:nth-child(4) { top: 80%; left: 80%; animation-delay: 6s; }
+.nodes span:nth-child(5) { top: 10%; left: 60%; animation-delay: 8s; }
+
+@keyframes floatNodes {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
 @media (max-width: 768px) {
-  h1 { font-size: 38px; }
-  nav a { margin: 8px 10px; display: inline-block; }
+
+    nav {
+        gap: 20px;
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    header img.logo {
+        width: 80px;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .time-box {
+        padding: 15px;
+        min-width: 60px;
+    }
 }
