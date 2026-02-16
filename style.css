@@ -1,4 +1,20 @@
-body {
+/* Register Button */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #1e3a8a, #0f172a);
