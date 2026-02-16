@@ -1,71 +1,67 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
   color: white;
 }
 
+/* NAVBAR */
+nav {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 18px;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 60px;
-  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  padding: 120px 20px;
 }
 
 .logo {
-  width: 130px;
+  width: 140px;
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin: 10px 0;
 }
 
-section {
-  padding: 50px 20px;
+p {
+  font-size: 18px;
+  opacity: 0.9;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 25px;
-  margin: 20px auto;
-  width: 85%;
-  border-radius: 10px;
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #3b82f6;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #2563eb;
-}
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #3b82f6;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background: #2563eb;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
 }
