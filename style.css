@@ -108,3 +108,26 @@ h1 {
   font-weight: 600;
   margin-top: 15px;
 }
+/* MOBILE NAV FIX */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 12px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px 10px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .intro {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+}
