@@ -1,134 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECENTRA 2K26</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECENTRA 2K26</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<style>
-header {
-  text-align: center;
-  padding: 120px 20px 80px;
-}
-
-.countdown {
-  margin-top: 50px;
-}
-
-#timer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-#timer div {
-  background: rgba(255,255,255,0.08);
-  padding: 20px 25px;
-  border-radius: 15px;
-  min-width: 90px;
-  backdrop-filter: blur(8px);
-  transition: 0.3s;
-}
-
-#timer div:hover {
-  transform: translateY(-5px);
-}
-
-#timer span {
-  font-size: 30px;
-  font-weight: 700;
-  display: block;
-}
-
-#timer p {
-  margin-top: 5px;
-  font-size: 14px;
-}
-</style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  
-<div class="particles">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-  
-<nav>
-  <a href="index.html">Home</a>
-  <a href="workshops.html">Workshops</a>
-  <a href="tech.html">Tech Events</a>
-  <a href="non-tech.html">Non-Tech</a>
-  <a href="helpline.html">Help Line</a>
-</nav>
 
-<header>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="tech.html">Tech Events</a>
+    <a href="non-tech.html">Non-Tech</a>
+    <a href="helpline.html">Helpline</a>
+  </nav>
 
-  <img src="assets/logo.png" class="logo" alt="ECENTRA Logo">
+  <!-- HERO SECTION -->
+  <header>
 
-  <h1>ECENTRA 2K26</h1>
-  <p class="tagline">Where Innovation Meets Excellence</p>
+    <img src="assets/logo.png" alt="ECENTRA Logo" class="logo">
 
-  <div class="intro">
+    <h1>ECENTRA 2K26</h1>
+
     <p>
-      ECENTRA 2K26 is the flagship technical fest of the ECE department,
-      bringing together innovation, creativity, and competitive spirit
-      under one electrifying platform.
+      The flagship technical fest of the ECE department.
+      A fusion of innovation, intelligence, and competitive spirit.
     </p>
-    <p>
-      Join us for workshops, competitions, gaming tournaments,
-      and exciting non-tech events designed to inspire and challenge you.
-    </p>
-  </div>
 
-  <!-- COUNTDOWN TIMER -->
-  <div class="countdown">
-    <h2>Hunt Begins In</h2>
-    <div id="timer">
-      <div><span id="days">00</span><p>Days</p></div>
-      <div><span id="hours">00</span><p>Hours</p></div>
-      <div><span id="minutes">00</span><p>Minutes</p></div>
-      <div><span id="seconds">00</span><p>Seconds</p></div>
+    <p>
+      Explore cutting-edge workshops, electrifying technical competitions,
+      dynamic gaming tournaments, and creative non-tech challenges —
+      all under one powerful platform.
+    </p>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+
+      <div class="time-box">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+
+      <div class="time-box">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+
     </div>
-  </div>
 
-</header>
+  </header>
 
-<script>
-// FEST DATE: March 9, 2026 at 9:30 AM
-const festDate = new Date("March 9, 2026 09:30:00").getTime();
+  <!-- COUNTDOWN SCRIPT -->
+  <script>
+    const festDate = new Date("March 9, 2026 09:30:00").getTime();
 
-const countdown = setInterval(function() {
+    const countdown = setInterval(function() {
 
-  const now = new Date().getTime();
-  const distance = festDate - now;
+      const now = new Date().getTime();
+      const distance = festDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
 
-  if (distance < 0) {
-    clearInterval(countdown);
-    document.getElementById("timer").innerHTML = "THE HUNT HAS STARTED!";
-  }
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.querySelector(".countdown").innerHTML = "<h2>The Hunt Has Started!</h2>";
+      }
 
-}, 1000);
-</script>
+    }, 1000);
+  </script>
 
 </body>
 </html>
