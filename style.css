@@ -14,7 +14,7 @@ nav {
 
 nav a {
   color: #ffffff;
-  margin: 0 20px;
+  margin: 0 25px;
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
@@ -25,7 +25,7 @@ nav a:hover {
   color: #60a5fa;
 }
 
-/* HEADER */
+/* HERO SECTION */
 header {
   text-align: center;
   padding: 120px 20px;
@@ -43,25 +43,21 @@ h1 {
   margin: 10px 0;
 }
 
-p {
-  font-size: 18px;
+.tagline {
+  font-size: 20px;
+  margin-bottom: 30px;
   opacity: 0.9;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 30px;
-  background: linear-gradient(45deg, #3b82f6, #2563eb);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s;
+/* INTRO TEXT */
+.intro {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.9;
+  opacity: 0.95;
 }
 
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+.intro p {
+  margin-bottom: 18px;
 }
