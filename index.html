@@ -5,43 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECENTRA 2K26</title>
 
-<!-- Professional Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
+
+<style>
+header {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.countdown {
+  margin-top: 50px;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+#timer div {
+  background: rgba(255,255,255,0.08);
+  padding: 20px 25px;
+  border-radius: 15px;
+  min-width: 90px;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+#timer div:hover {
+  transform: translateY(-5px);
+}
+
+#timer span {
+  font-size: 30px;
+  font-weight: 700;
+  display: block;
+}
+
+#timer p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <a href="index.html">Home</a>
   <a href="workshops.html">Workshops</a>
-  <a href="tech.html">Tech</a>
+  <a href="tech.html">Tech Events</a>
   <a href="non-tech.html">Non-Tech</a>
+  <a href="help.html">Help Line</a>
 </nav>
 
-<!-- HERO SECTION -->
 <header>
+
   <img src="assets/logo.png" class="logo" alt="ECENTRA Logo">
+
   <h1>ECENTRA 2K26</h1>
   <p class="tagline">Where Innovation Meets Excellence</p>
 
   <div class="intro">
     <p>
       ECENTRA 2K26 is the flagship technical fest of the ECE department,
-      designed to ignite innovation, creativity, and competitive excellence.
+      bringing together innovation, creativity, and competitive spirit
+      under one electrifying platform.
     </p>
     <p>
-      Bringing together advanced technical workshops, challenging competitions,
-      and engaging non-technical events, ECENTRA provides a platform
-      for students to showcase talent, collaborate, and grow.
-    </p>
-    <p>
-      Join us in celebrating technology, creativity, and the spirit of engineering.
+      Join us for workshops, technical competitions, gaming tournaments,
+      and exciting non-tech events designed to inspire and challenge you.
     </p>
   </div>
+
+  <!-- COUNTDOWN TIMER -->
+  <div class="countdown">
+    <h2>Fest Begins In</h2>
+    <div id="timer">
+      <div><span id="days">00</span><p>Days</p></div>
+      <div><span id="hours">00</span><p>Hours</p></div>
+      <div><span id="minutes">00</span><p>Minutes</p></div>
+      <div><span id="seconds">00</span><p>Seconds</p></div>
+    </div>
+  </div>
+
 </header>
+
+<script>
+// SET YOUR FEST DATE HERE
+const festDate = new Date("March 30, 2026 09:00:00").getTime();
+
+const countdown = setInterval(function() {
+
+  const now = new Date().getTime();
+  const distance = festDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("timer").innerHTML = "ECENTRA 2K26 HAS STARTED!";
+  }
+
+}, 1000);
+</script>
 
 </body>
 </html>
