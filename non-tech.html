@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Events | ECENTRA 2K26</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Page Specific Styling */
+
+.page-section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card p {
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+}
+
+/* Card reveal animation */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 0.8s ease forwards;
+}
+
+.card:nth-child(1){animation-delay:0.1s;}
+.card:nth-child(2){animation-delay:0.2s;}
+.card:nth-child(3){animation-delay:0.3s;}
+.card:nth-child(4){animation-delay:0.4s;}
+.card:nth-child(5){animation-delay:0.5s;}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="workshops.html">Workshops</a>
+  <a href="tech.html">Tech Events</a>
+  <a href="nontech.html">Non-Tech</a>
+</nav>
+
+<section class="page-section">
+  <h2 class="page-title">Tech Events</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>MEDTECH EXPO</h3>
+      <p>Project presentations in technical & medical fields.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWLjzs9ExM6obYt10o1TW__cbI6vibiuGRKS3kOJprSwTLPQ/viewform?usp=publish-editor" target="_blank" class="btn">Register</a>
+    </div>
+
+    <div class="card">
+      <h3>SLIDE SYNC</h3>
+      <p>Visual presentation of trending technical topics.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9hj1aGoCmmKaBl-3jbxcWJE_gKrgA7evBrHaZW0o3f3ZakA/viewform?usp=publish-editor" target="_blank" class="btn">Register</a>
+    </div>
+
+    <div class="card">
+      <h3>THINK IQ</h3>
+      <p>Quiz based on GK, Aptitude, Physics & Chemistry.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-psXwVjm79fH8LB4EDPW6UFa4n_w9dO3YYV7u_r02y1Hb1A/viewform?usp=publish-editor" target="_blank" class="btn">Register</a>
+    </div>
+
+    <div class="card">
+      <h3>BLIND CIRCUIT BUILD</h3>
+      <p>Identify and connect components to build circuits.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-go7BGgdFUSlCj-tku9HABIRbnRtdF5AVXrKY5RWUK6dQag/viewform?usp=publish-editor" target="_blank" class="btn">Register</a>
+    </div>
+
+    <div class="card">
+      <h3>LOGIC LADDER</h3>
+      <p>Logic gate challenges with a fun board twist.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsA_4rTYmGRqrRdH5eyScuwYdH9bkgGc4YlaNklaV_g_3-VA/viewform?usp=publish-editor" target="_blank" class="btn">Register</a>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
