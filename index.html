@@ -77,14 +77,14 @@ header {
       under one electrifying platform.
     </p>
     <p>
-      Join us for workshops, technical competitions, gaming tournaments,
+      Join us for workshops, competitions, gaming tournaments,
       and exciting non-tech events designed to inspire and challenge you.
     </p>
   </div>
 
   <!-- COUNTDOWN TIMER -->
   <div class="countdown">
-    <h2>Fest Begins In</h2>
+    <h2>Hunt Begins In</h2>
     <div id="timer">
       <div><span id="days">00</span><p>Days</p></div>
       <div><span id="hours">00</span><p>Hours</p></div>
@@ -96,8 +96,8 @@ header {
 </header>
 
 <script>
-// SET YOUR FEST DATE HERE
-const festDate = new Date("March 30, 2026 09:00:00").getTime();
+// FEST DATE: March 9, 2026 at 9:30 AM
+const festDate = new Date("March 9, 2026 09:30:00").getTime();
 
 const countdown = setInterval(function() {
 
@@ -116,7 +116,7 @@ const countdown = setInterval(function() {
 
   if (distance < 0) {
     clearInterval(countdown);
-    document.getElementById("timer").innerHTML = "ECENTRA 2K26 HAS STARTED!";
+    document.getElementById("timer").innerHTML = "THE HUNT HAS STARTED!";
   }
 
 }, 1000);
