@@ -7,7 +7,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+
+    font-family: "Times New Roman", Times, serif;
     background: radial-gradient(circle at top, #0f1b2e 0%, #050b18 70%);
     color: #ffffff;
     overflow-x: hidden;
