@@ -1,7 +1,3 @@
-/* =========================
-   ECENTRA 2K26 FUTURISTIC UI
-   ========================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -11,35 +7,58 @@
 }
 
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
-    background: linear-gradient(135deg, #0a192f, #0f2a4d);
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0f1b2e 0%, #050b18 70%);
+    color: #ffffff;
     overflow-x: hidden;
     position: relative;
 }
 
-/* ECE Pattern Layer */
-body::before {
-    content: "";
+/* =========================
+   ECE Animated Background
+   ========================= */
+
+.ece-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23ffffff' stroke-width='1' opacity='0.05'%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3Crect x='120' y='40' width='20' height='20'/%3E%3Cline x1='0' y1='100' x2='200' y2='100'/%3E%3Cline x1='100' y1='0' x2='100' y2='200'/%3E%3Cpath d='M20 160 Q50 120 80 160 T140 160' fill='none'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
+    inset: 0;
     z-index: -1;
-    pointer-events: none;
+    overflow: hidden;
 }
 
-@keyframes gridMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(40px); }
+/* Oscilloscope Wave */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200px;
+    top: 40%;
+    left: -50%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 40px,
+        rgba(0,255,255,0.15) 41px,
+        transparent 42px
+    );
+    animation: waveMove 14s linear infinite;
+    opacity: 0.25;
+}
+
+@keyframes waveMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(200px); }
+}
+
+/* Glowing Nodes */
+.nodes {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,255,255,0.3) 2px, transparent 3px);
+    background-size: 120px 120px;
+    opacity: 0.08;
 }
 
 /* =========================
-   Navbar
+   NAVBAR
    ========================= */
 
 nav {
@@ -48,7 +67,7 @@ nav {
     gap: 40px;
     padding: 20px;
     background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -66,12 +85,12 @@ nav a:hover {
 }
 
 /* =========================
-   Hero Section
+   HERO SECTION
    ========================= */
 
 header {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 120px 20px 80px;
 }
 
 .logo {
@@ -96,31 +115,19 @@ header p {
 }
 
 /* =========================
-   Countdown Section
+   COUNTDOWN
    ========================= */
-
-.countdown-section {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.countdown-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #00f7ff;
-    text-shadow: 0 0 8px #00f7ff;
-}
 
 .countdown {
     display: flex;
     justify-content: center;
     gap: 25px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
 .time-box {
-    background: rgba(0, 255, 255, 0.08);
+    background: rgba(0,255,255,0.08);
     border: 1px solid rgba(0,255,255,0.4);
     backdrop-filter: blur(12px);
     padding: 25px 30px;
@@ -135,21 +142,21 @@ header p {
     box-shadow: 0 0 25px rgba(0,255,255,0.6);
 }
 
-.time-box h2 {
-    font-size: 32px;
-    color: #ffffff;
+.time-box span {
+    font-size: 30px;
+    font-weight: 600;
 }
 
-.time-box span {
+.time-box small {
     font-size: 14px;
     color: #9fb4ff;
 }
 
 /* =========================
-   Page Sections
+   SECTIONS
    ========================= */
 
-.page-section {
+section {
     padding: 100px 20px;
     text-align: center;
 }
@@ -163,7 +170,7 @@ header p {
 }
 
 /* =========================
-   Grid Layout
+   GRID
    ========================= */
 
 .grid {
@@ -175,7 +182,7 @@ header p {
 }
 
 /* =========================
-   Cards
+   CARDS
    ========================= */
 
 .card {
@@ -222,25 +229,7 @@ header p {
 }
 
 /* =========================
-   Helpline Page Styling
-   ========================= */
-
-.coordinator-card {
-    background: rgba(0,255,255,0.05);
-    border: 1px solid rgba(0,255,255,0.3);
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,255,255,0.2);
-}
-
-.coordinator-card h4 {
-    color: #00f7ff;
-    margin-bottom: 5px;
-}
-
-/* =========================
-   Responsive
+   RESPONSIVE
    ========================= */
 
 @media (max-width: 768px) {
@@ -248,12 +237,12 @@ header p {
         font-size: 40px;
     }
 
-    .page-title {
-        font-size: 30px;
-    }
-
     nav {
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .page-title {
+        font-size: 28px;
     }
 }
