@@ -3,72 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECENTRA 2K26</title>
+<title>Workshops | ECENTRA 2K26</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="workshops.html">Workshops</a>
-  <a href="tech.html">Tech Events</a>
-  <a href="non-tech.html">Non-Tech</a>
-  <a href="helpline.html">Helpline</a>
+    <div class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="workshops.html" class="active">Workshops</a>
+        <a href="tech.html">Tech Events</a>
+        <a href="non-tech.html">Non-Tech</a>
+        <a href="helpline.html">Helpline</a>
+    </div>
 </nav>
 
-<div class="hero">
-    <img src="assets/logo.png" alt="logo">
-
-    <h1>ECENTRA 2K26</h1>
-    <p>Where Innovation Meets Excellence</p>
-
-   <section class="countdown-section">
-    <h2 class="countdown-title">Hunt Begins In</h2>
-
-    <div class="countdown-container">
-        <div class="time-box">
-            <h2 id="days">00</h2>
-            <p>Days</p>
-        </div>
-
-        <div class="time-box">
-            <h2 id="hours">00</h2>
-            <p>Hours</p>
-        </div>
-
-        <div class="time-box">
-            <h2 id="minutes">00</h2>
-            <p>Minutes</p>
-        </div>
-
-        <div class="time-box">
-            <h2 id="seconds">00</h2>
-            <p>Seconds</p>
-        </div>
-    </div>
+<section class="page-hero">
+    <h1>Our Workshops</h1>
+    <p>Hands-on sessions designed to build real-world ECE skills.</p>
 </section>
+
+<section class="workshop-container">
+
+    <!-- Workshop 1 -->
+    <div class="workshop-card">
+        <h2>Robotics Workshop</h2>
+        <p>Learn fundamentals of robotics, sensors, motors, and embedded control systems.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
     </div>
-</div>
 
-<script>
-const festDate = new Date("March 9, 2026 09:30:00").getTime();
+    <!-- Workshop 2 -->
+    <div class="workshop-card">
+        <h2>IoT & Embedded Systems</h2>
+        <p>Build smart systems using microcontrollers and IoT communication protocols.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
+    </div>
 
-setInterval(function() {
-  const now = new Date().getTime();
-  const distance = festDate - now;
+    <!-- Workshop 3 -->
+    <div class="workshop-card">
+        <h2>Digital Communication</h2>
+        <p>Explore modulation, signal processing and modern communication systems.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
+    </div>
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    <!-- Workshop 4 -->
+    <div class="workshop-card">
+        <h2>VLSI Design & FPGA</h2>
+        <p>Design digital circuits using HDL and implement on FPGA boards.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
+    </div>
 
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-}, 1000);
-</script>
+</section>
 
 </body>
 </html>
