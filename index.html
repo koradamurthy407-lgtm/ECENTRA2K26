@@ -1,101 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ECENTRA 2K26</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECENTRA 2K26</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-  <div class="ece-bg">
-    <div class="wave"></div>
-    <div class="nodes"></div>
-</div>
-<div class="drone"></div>
-  
-  <!-- NAVIGATION -->
-  <nav>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/drone.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+
+<nav>
     <a href="index.html">Home</a>
     <a href="workshops.html">Workshops</a>
     <a href="tech.html">Tech Events</a>
     <a href="non-tech.html">Non-Tech</a>
     <a href="helpline.html">Helpline</a>
-  </nav>
+</nav>
 
-  <!-- HERO SECTION -->
-  <header>
-
-    <img src="assets/logo.png" alt="ECENTRA Logo" class="logo">
-
+<header>
+    <img src="assets/logo.png" class="logo" alt="logo">
     <h1>ECENTRA 2K26</h1>
+    <p>The Flagship Technical Fest of ECE</p>
 
-    <p>
-      The flagship technical fest of the ECE department.
-      A fusion of innovation, intelligence, and competitive spirit.
-    </p>
-
-    <p>
-      Explore cutting-edge workshops, electrifying technical competitions,
-      dynamic gaming tournaments, and creative non-tech challenges —
-      all under one powerful platform.
-    </p>
-
-    <!-- COUNTDOWN -->
     <div class="countdown">
-
-      <div class="time-box">
-        <span id="days">00</span>
-        <small>Days</small>
-      </div>
-
-      <div class="time-box">
-        <span id="hours">00</span>
-        <small>Hours</small>
-      </div>
-
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <small>Minutes</small>
-      </div>
-
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <small>Seconds</small>
-      </div>
-
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>Days</small>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>Hours</small>
+        </div>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+        </div>
     </div>
+</header>
 
-  </header>
+<script>
+const festDate = new Date("March 9, 2026 09:30:00").getTime();
 
-  <!-- COUNTDOWN SCRIPT -->
-  <script>
-    const festDate = new Date("March 9, 2026 09:30:00").getTime();
+setInterval(function () {
+    const now = new Date().getTime();
+    const distance = festDate - now;
 
-    const countdown = setInterval(function() {
-
-      const now = new Date().getTime();
-      const distance = festDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").innerHTML = days;
-      document.getElementById("hours").innerHTML = hours;
-      document.getElementById("minutes").innerHTML = minutes;
-      document.getElementById("seconds").innerHTML = seconds;
-
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.querySelector(".countdown").innerHTML = "<h2>The Hunt Has Started!</h2>";
-      }
-
-    }, 1000);
-  </script>
+    document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
+</script>
 
 </body>
 </html>
