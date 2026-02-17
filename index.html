@@ -1,60 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workshops | ECENTRA 2K26</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>ECENTRA 2K26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-    <div class="nav-container">
+    <!-- NAVBAR -->
+    <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="workshops.html" class="active">Workshops</a>
+        <a href="workshops.html">Workshops</a>
         <a href="tech.html">Tech Events</a>
         <a href="non-tech.html">Non-Tech</a>
         <a href="helpline.html">Helpline</a>
-    </div>
-</nav>
+    </nav>
 
-<section class="page-hero">
-    <h1>Our Workshops</h1>
-    <p>Hands-on sessions designed to build real-world ECE skills.</p>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <img src="assets/logo.png" class="logo" alt="ECENTRA Logo">
 
-<section class="workshop-container">
+        <h1>ECENTRA 2K26</h1>
+        <p class="tagline">Where Innovation Meets Excellence</p>
+    </section>
 
-    <!-- Workshop 1 -->
-    <div class="workshop-card">
-        <h2>Robotics Workshop</h2>
-        <p>Learn fundamentals of robotics, sensors, motors, and embedded control systems.</p>
-        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
-    </div>
+    <!-- COUNTDOWN SECTION -->
+    <section class="countdown-section">
+        <h2>Hunt Begins In</h2>
 
-    <!-- Workshop 2 -->
-    <div class="workshop-card">
-        <h2>IoT & Embedded Systems</h2>
-        <p>Build smart systems using microcontrollers and IoT communication protocols.</p>
-        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
-    </div>
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
 
-    <!-- Workshop 3 -->
-    <div class="workshop-card">
-        <h2>Digital Communication</h2>
-        <p>Explore modulation, signal processing and modern communication systems.</p>
-        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
-    </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
 
-    <!-- Workshop 4 -->
-    <div class="workshop-card">
-        <h2>VLSI Design & FPGA</h2>
-        <p>Design digital circuits using HDL and implement on FPGA boards.</p>
-        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Register Now →</a>
-    </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
 
-</section>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN SCRIPT -->
+    <script>
+        const eventDate = new Date("March 9, 2026 09:30:00").getTime();
+
+        const timer = setInterval(function () {
+
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-section").innerHTML =
+                    "<h2>The Hunt Has Begun!</h2>";
+            }
+
+        }, 1000);
+    </script>
 
 </body>
 </html>
