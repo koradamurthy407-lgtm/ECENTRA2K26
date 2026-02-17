@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&display=swap');
-
-/* ==============================
-   GLOBAL
-============================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -11,44 +7,55 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-    background: linear-gradient(160deg, #0a0f1f, #12182f 60%, #1a1f3c);
+    font-family: 'Inter', sans-serif;
     color: white;
     overflow-x: hidden;
+    background: #0c1022;
     position: relative;
 }
 
-/* ==============================
-   SOFT AMBIENT GLOW LAYERS
-============================== */
+/* =========================
+   Animated Liquid Background
+========================= */
 
-body::before,
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, #00d4ff33, transparent 40%),
+                radial-gradient(circle at 70% 60%, #6c63ff33, transparent 40%),
+                radial-gradient(circle at 50% 80%, #00ffd533, transparent 40%);
+    animation: moveBackground 25s ease-in-out infinite alternate;
+    z-index: -2;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    50% {
+        transform: translate(-10%, -10%);
+    }
+    100% {
+        transform: translate(5%, -5%);
+    }
+}
+
+/* Subtle Glass Noise Layer */
+
 body::after {
     content: "";
     position: fixed;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    filter: blur(120px);
+    inset: 0;
+    backdrop-filter: blur(80px);
+    background: rgba(255, 255, 255, 0.03);
     z-index: -1;
-    opacity: 0.4;
 }
 
-body::before {
-    background: #00d4ff;
-    top: -200px;
-    left: -200px;
-}
-
-body::after {
-    background: #6c63ff;
-    bottom: -200px;
-    right: -200px;
-}
-
-/* ==============================
-   NAVBAR (LIQUID GLASS)
-============================== */
+/* =========================
+   NAVBAR (Liquid Glass)
+========================= */
 
 nav {
     position: fixed;
@@ -58,7 +65,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    backdrop-filter: blur(25px);
+    backdrop-filter: blur(30px);
     background: rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 100;
@@ -75,9 +82,9 @@ nav a:hover {
     color: white;
 }
 
-/* ==============================
+/* =========================
    HERO SECTION
-============================== */
+========================= */
 
 header {
     min-height: 100vh;
@@ -95,7 +102,7 @@ header {
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 72px;
     font-weight: 700;
     letter-spacing: -1px;
     background: linear-gradient(90deg, #ffffff, #b9d4ff);
@@ -112,9 +119,9 @@ header p {
     margin-bottom: 30px;
 }
 
-/* ==============================
-   COUNTDOWN (GLASS BLOCKS)
-============================== */
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown {
     display: flex;
@@ -127,9 +134,9 @@ header p {
 .time-box {
     padding: 25px 35px;
     border-radius: 25px;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(40px);
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: 0.4s ease;
 }
 
@@ -150,9 +157,9 @@ header p {
     color: #aab4ff;
 }
 
-/* ==============================
+/* =========================
    SECTIONS
-============================== */
+========================= */
 
 section {
     padding: 120px 20px;
@@ -165,9 +172,9 @@ section {
     font-weight: 600;
 }
 
-/* ==============================
-   GRID LAYOUT
-============================== */
+/* =========================
+   GRID
+========================= */
 
 .grid {
     display: grid;
@@ -177,9 +184,9 @@ section {
     margin: auto;
 }
 
-/* ==============================
-   LIQUID GLASS CARDS
-============================== */
+/* =========================
+   GLASS CARDS
+========================= */
 
 .card {
     padding: 40px;
@@ -188,6 +195,9 @@ section {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
 }
 
 .card:hover {
@@ -217,16 +227,6 @@ section {
     color: white;
 }
 
-/* ==============================
-   SMOOTH FADE-IN ANIMATION
-============================== */
-
-.card {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s forwards;
-}
-
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -234,9 +234,9 @@ section {
     }
 }
 
-/* ==============================
+/* =========================
    RESPONSIVE
-============================== */
+========================= */
 
 @media (max-width: 768px) {
     h1 {
