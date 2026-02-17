@@ -1,70 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECENTRA 2K26</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Test</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<!-- Background Video -->
-<video class="bg-video" autoplay muted loop playsinline>
-    <source src="assets/drone.mp4" type="video/mp4">
-</video>
-
-<div class="video-overlay"></div>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="workshops.html">Workshops</a>
-    <a href="tech.html">Tech Events</a>
-    <a href="non-tech.html">Non-Tech</a>
-    <a href="helpline.html">Helpline</a>
-</nav>
-
-<header>
-    <img src="assets/logo.png" class="logo" alt="logo">
-    <h1>ECENTRA 2K26</h1>
-    <p>The Flagship Technical Fest of ECE</p>
-
-    <div class="countdown">
-        <div class="time-box">
-            <span id="days">00</span>
-            <small>Days</small>
-        </div>
-        <div class="time-box">
-            <span id="hours">00</span>
-            <small>Hours</small>
-        </div>
-        <div class="time-box">
-            <span id="minutes">00</span>
-            <small>Minutes</small>
-        </div>
-        <div class="time-box">
-            <span id="seconds">00</span>
-            <small>Seconds</small>
-        </div>
-    </div>
-</header>
-
-<script>
-const festDate = new Date("March 9, 2026 09:30:00").getTime();
-
-setInterval(function () {
-    const now = new Date().getTime();
-    const distance = festDate - now;
-
-    document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
-}, 1000);
-</script>
+<h1 style="position:relative; z-index:5; color:white; margin-top:200px; text-align:center;">
+ECENTRA 2K26 TEST
+</h1>
 
 </body>
 </html>
