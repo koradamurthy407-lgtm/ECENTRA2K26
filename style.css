@@ -157,3 +157,73 @@ nav a:hover{
         width:220px;
     }
 }
+/* ===== Animated Background Grid ===== */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(56,189,248,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+    z-index:-2;
+}
+
+@keyframes gridMove{
+    from { background-position:0 0; }
+    to { background-position:60px 60px; }
+}
+
+/* ===== Soft Glow Behind Title ===== */
+.hero h1{
+    position:relative;
+}
+
+.hero h1::after{
+    content:"";
+    position:absolute;
+    width:120%;
+    height:120%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+    filter:blur(40px);
+    z-index:-1;
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+    0%,100%{ opacity:0.6; }
+    50%{ opacity:1; }
+}
+
+/* ===== Countdown Number Pulse ===== */
+.time-box h2{
+    animation:numberPulse 2s ease-in-out infinite;
+}
+
+@keyframes numberPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.05); }
+}
+
+/* ===== Floating Light Dots ===== */
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(56,189,248,0.4) 2px, transparent 2px),
+        radial-gradient(circle at 80% 60%, rgba(99,102,241,0.4) 2px, transparent 2px),
+        radial-gradient(circle at 50% 90%, rgba(56,189,248,0.3) 2px, transparent 2px);
+    background-size: 300px 300px;
+    animation: floatDots 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes floatDots{
+    from { background-position:0 0, 0 0, 0 0; }
+    to { background-position:300px 200px, -300px 200px, 200px -300px; }
+}
